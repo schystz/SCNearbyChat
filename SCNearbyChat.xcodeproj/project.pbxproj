@@ -7,23 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0373E3211BC61E2300774E3D /* SZEditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3201BC61E2300774E3D /* SZEditProfileController.swift */; settings = {ASSET_TAGS = (); }; };
+		0373E3231BC6323900774E3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0373E3221BC6323900774E3D /* Podfile */; settings = {ASSET_TAGS = (); }; };
+		0373E3261BC6359800774E3D /* SZHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3251BC6359800774E3D /* SZHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		0373E3281BC6431700774E3D /* SZChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3271BC6431700774E3D /* SZChatController.swift */; settings = {ASSET_TAGS = (); }; };
 		03F5FA561BC4B4F700633B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA551BC4B4F700633B7F /* AppDelegate.swift */; };
-		03F5FA581BC4B4F700633B7F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA571BC4B4F700633B7F /* FirstViewController.swift */; };
-		03F5FA5A1BC4B4F700633B7F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA591BC4B4F700633B7F /* SecondViewController.swift */; };
 		03F5FA5D1BC4B4F700633B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F5FA5B1BC4B4F700633B7F /* Main.storyboard */; };
 		03F5FA5F1BC4B4F700633B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */; };
 		03F5FA621BC4B4F700633B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F5FA601BC4B4F700633B7F /* LaunchScreen.storyboard */; };
+		03F5FA6D1BC4D2E200633B7F /* SZDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA6C1BC4D2E200633B7F /* SZDiscoverController.swift */; settings = {ASSET_TAGS = (); }; };
+		03F5FA6F1BC4D2F700633B7F /* SZProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA6E1BC4D2F700633B7F /* SZProfileController.swift */; settings = {ASSET_TAGS = (); }; };
+		03F5FA711BC4D82300633B7F /* SZDiscoveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA701BC4D82300633B7F /* SZDiscoveryManager.swift */; settings = {ASSET_TAGS = (); }; };
+		03F5FA731BC4D98B00633B7F /* SZUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA721BC4D98B00633B7F /* SZUser.swift */; settings = {ASSET_TAGS = (); }; };
+		03FAEAEB1BC5E9ED00154C53 /* SZPeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAEAEA1BC5E9ED00154C53 /* SZPeerCell.swift */; settings = {ASSET_TAGS = (); }; };
+		03FAEAF01BC5EE2100154C53 /* SZPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FAEAEF1BC5EE2100154C53 /* SZPeer.swift */; settings = {ASSET_TAGS = (); }; };
+		B8D0170F1509C4DADBE25174 /* libPods-SCNearbyChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F13611AE8E6AFBFA1DF532AB /* libPods-SCNearbyChat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0373E3201BC61E2300774E3D /* SZEditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZEditProfileController.swift; sourceTree = "<group>"; };
+		0373E3221BC6323900774E3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0373E3241BC6325300774E3D /* SZNearbyChat-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SZNearbyChat-BridgingHeader.h"; sourceTree = "<group>"; };
+		0373E3251BC6359800774E3D /* SZHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZHelper.swift; sourceTree = "<group>"; };
+		0373E3271BC6431700774E3D /* SZChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZChatController.swift; sourceTree = "<group>"; };
 		03F5FA521BC4B4F700633B7F /* SCNearbyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCNearbyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F5FA551BC4B4F700633B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03F5FA571BC4B4F700633B7F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		03F5FA591BC4B4F700633B7F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		03F5FA5C1BC4B4F700633B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F5FA611BC4B4F700633B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F5FA631BC4B4F700633B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03F5FA6C1BC4D2E200633B7F /* SZDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZDiscoverController.swift; sourceTree = "<group>"; };
+		03F5FA6E1BC4D2F700633B7F /* SZProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZProfileController.swift; sourceTree = "<group>"; };
+		03F5FA701BC4D82300633B7F /* SZDiscoveryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZDiscoveryManager.swift; sourceTree = "<group>"; };
+		03F5FA721BC4D98B00633B7F /* SZUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZUser.swift; sourceTree = "<group>"; };
+		03FAEAEA1BC5E9ED00154C53 /* SZPeerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZPeerCell.swift; sourceTree = "<group>"; };
+		03FAEAEF1BC5EE2100154C53 /* SZPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZPeer.swift; sourceTree = "<group>"; };
+		9F41A2BC906F1C3B9C9DF791 /* Pods-SCNearbyChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCNearbyChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SCNearbyChat/Pods-SCNearbyChat.debug.xcconfig"; sourceTree = "<group>"; };
+		E332314D9D2749F87B18A81F /* Pods-SCNearbyChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCNearbyChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SCNearbyChat/Pods-SCNearbyChat.release.xcconfig"; sourceTree = "<group>"; };
+		F13611AE8E6AFBFA1DF532AB /* libPods-SCNearbyChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SCNearbyChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D0170F1509C4DADBE25174 /* libPods-SCNearbyChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +62,11 @@
 		03F5FA491BC4B4F600633B7F = {
 			isa = PBXGroup;
 			children = (
+				0373E3221BC6323900774E3D /* Podfile */,
 				03F5FA541BC4B4F700633B7F /* SCNearbyChat */,
 				03F5FA531BC4B4F700633B7F /* Products */,
+				4B40546704A3F40DC699742C /* Pods */,
+				B5652C0EF12730C8EC979E41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +82,71 @@
 			isa = PBXGroup;
 			children = (
 				03F5FA551BC4B4F700633B7F /* AppDelegate.swift */,
-				03F5FA571BC4B4F700633B7F /* FirstViewController.swift */,
-				03F5FA591BC4B4F700633B7F /* SecondViewController.swift */,
-				03F5FA5B1BC4B4F700633B7F /* Main.storyboard */,
-				03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */,
-				03F5FA601BC4B4F700633B7F /* LaunchScreen.storyboard */,
-				03F5FA631BC4B4F700633B7F /* Info.plist */,
+				0373E3241BC6325300774E3D /* SZNearbyChat-BridgingHeader.h */,
+				03F5FA6A1BC4B6B300633B7F /* Resources */,
+				03F5FA691BC4B6AC00633B7F /* Classes */,
+				03FAEAEC1BC5E9F800154C53 /* Views */,
+				03F5FA6B1BC4B6B800633B7F /* Controllers */,
 			);
 			path = SCNearbyChat;
+			sourceTree = "<group>";
+		};
+		03F5FA691BC4B6AC00633B7F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				03F5FA721BC4D98B00633B7F /* SZUser.swift */,
+				03FAEAEF1BC5EE2100154C53 /* SZPeer.swift */,
+				03F5FA701BC4D82300633B7F /* SZDiscoveryManager.swift */,
+				0373E3251BC6359800774E3D /* SZHelper.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		03F5FA6A1BC4B6B300633B7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03F5FA601BC4B4F700633B7F /* LaunchScreen.storyboard */,
+				03F5FA5B1BC4B4F700633B7F /* Main.storyboard */,
+				03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */,
+				03F5FA631BC4B4F700633B7F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		03F5FA6B1BC4B6B800633B7F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03F5FA6C1BC4D2E200633B7F /* SZDiscoverController.swift */,
+				0373E3271BC6431700774E3D /* SZChatController.swift */,
+				03F5FA6E1BC4D2F700633B7F /* SZProfileController.swift */,
+				0373E3201BC61E2300774E3D /* SZEditProfileController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		03FAEAEC1BC5E9F800154C53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03FAEAEA1BC5E9ED00154C53 /* SZPeerCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4B40546704A3F40DC699742C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F41A2BC906F1C3B9C9DF791 /* Pods-SCNearbyChat.debug.xcconfig */,
+				E332314D9D2749F87B18A81F /* Pods-SCNearbyChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5652C0EF12730C8EC979E41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F13611AE8E6AFBFA1DF532AB /* libPods-SCNearbyChat.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03F5FA661BC4B4F700633B7F /* Build configuration list for PBXNativeTarget "SCNearbyChat" */;
 			buildPhases = (
+				DC988FD82C5CD4E4C1BCED45 /* Check Pods Manifest.lock */,
 				03F5FA4E1BC4B4F700633B7F /* Sources */,
 				03F5FA4F1BC4B4F700633B7F /* Frameworks */,
 				03F5FA501BC4B4F700633B7F /* Resources */,
+				F4DBB64D38EE9ADB78B78EA4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +182,7 @@
 				TargetAttributes = {
 					03F5FA511BC4B4F700633B7F = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = S3YH2A9CEV;
 					};
 				};
 			};
@@ -126,20 +211,61 @@
 			files = (
 				03F5FA621BC4B4F700633B7F /* LaunchScreen.storyboard in Resources */,
 				03F5FA5F1BC4B4F700633B7F /* Assets.xcassets in Resources */,
+				0373E3231BC6323900774E3D /* Podfile in Resources */,
 				03F5FA5D1BC4B4F700633B7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DC988FD82C5CD4E4C1BCED45 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F4DBB64D38EE9ADB78B78EA4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SCNearbyChat/Pods-SCNearbyChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03F5FA4E1BC4B4F700633B7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F5FA5A1BC4B4F700633B7F /* SecondViewController.swift in Sources */,
+				0373E3211BC61E2300774E3D /* SZEditProfileController.swift in Sources */,
+				03FAEAF01BC5EE2100154C53 /* SZPeer.swift in Sources */,
+				0373E3281BC6431700774E3D /* SZChatController.swift in Sources */,
+				03F5FA6F1BC4D2F700633B7F /* SZProfileController.swift in Sources */,
+				03F5FA731BC4D98B00633B7F /* SZUser.swift in Sources */,
+				0373E3261BC6359800774E3D /* SZHelper.swift in Sources */,
+				03FAEAEB1BC5E9ED00154C53 /* SZPeerCell.swift in Sources */,
 				03F5FA561BC4B4F700633B7F /* AppDelegate.swift in Sources */,
-				03F5FA581BC4B4F700633B7F /* FirstViewController.swift in Sources */,
+				03F5FA6D1BC4D2E200633B7F /* SZDiscoverController.swift in Sources */,
+				03F5FA711BC4D82300633B7F /* SZDiscoveryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,23 +374,31 @@
 		};
 		03F5FA671BC4B4F700633B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F41A2BC906F1C3B9C9DF791 /* Pods-SCNearbyChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SCNearbyChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.schystz.SCNearbyChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SCNearbyChat/SZNearbyChat-BridgingHeader.h";
 			};
 			name = Debug;
 		};
 		03F5FA681BC4B4F700633B7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E332314D9D2749F87B18A81F /* Pods-SCNearbyChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SCNearbyChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.schystz.SCNearbyChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SCNearbyChat/SZNearbyChat-BridgingHeader.h";
 			};
 			name = Release;
 		};
@@ -287,6 +421,7 @@
 				03F5FA681BC4B4F700633B7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
