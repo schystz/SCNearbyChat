@@ -1,11 +1,12 @@
 # SCNearbyChat
-An iOS application which lets you discover and chat nearby users
+An iOS application which lets you discover and chat nearby users without using internet connection. This is made possible by Apple's MultipeerConnectivity framework.
 
 # Instructions
 - Clone the project to your local machine
   - `git clone https://github.com/schystz/SCNearbyChat.git`
 - Run `pod install` at the root directory to install dependencies
 - Open SCNearbyChat.xcworkspace and run the app
+- You may test the app on the Simulator and an actual iPhone or iPad
 
 # Issues
 There seems to be somes issues on MultipeerConnectivity framework.
