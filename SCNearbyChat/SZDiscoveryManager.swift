@@ -9,11 +9,19 @@
 import Foundation
 import MultipeerConnectivity
 
-protocol SZDiscoveryManagerDelegate {
+protocol SZDiscoveryManagerBrowserDelegate {
     func didFoundPeer()
     func didLostPeer()
-    func didReceivedInvitationFromPeer(peerId: MCPeerID)
-    func didConnectWithPeer(peerId: MCPeerID)
+}
+
+protocol SZDiscoveryManagerAdvertiserDelegate {
+    func didReceivedInvitationFromPeer(peer: SZPeer)
+}
+
+protocol SZDiscoveryManagerSessionDelegate {
+    func didConnectWithPeer(peer: SZPeer)
+    func didNotConnectWithPeer(peer: SZPeer)
+    func didReceivedMessage(message: String, fromPeer peer:SZPeer)
 }
 
 class SZDiscoveryManager: NSObject {
@@ -24,10 +32,13 @@ class SZDiscoveryManager: NSObject {
     static let serviceType = "sc-chatservice"
     
     var peers = [SZPeer]()
-    var delegate: SZDiscoveryManagerDelegate?
+    var browserDelegate: SZDiscoveryManagerBrowserDelegate?
+    var advertiserDelegate: SZDiscoveryManagerAdvertiserDelegate?
+    var sessionDelegate: SZDiscoveryManagerSessionDelegate?
     var session: MCSession!
     var advertiser: MCNearbyServiceAdvertiser!
     var browser: MCNearbyServiceBrowser!
+    var invitationHandler: ((Bool, MCSession) -> Void)?
     
     private var peerId: MCPeerID!
     
@@ -62,6 +73,16 @@ class SZDiscoveryManager: NSObject {
         browser.startBrowsingForPeers()
     }
     
+    private func peerForPeerID(peerID: MCPeerID) -> SZPeer? {
+        for peer in peers {
+            if (peer.peerId.isEqual(peerID)) {
+                return peer
+            }
+        }
+        
+        return nil
+    }
+    
     // MARK: - Public Methods
     
     func refreshAdvertisingInfo() {
@@ -73,6 +94,17 @@ class SZDiscoveryManager: NSObject {
         initAdvertiser()
     }
     
+    func sendMessage(message: String, toPeer peer: SZPeer) {
+        let data = message.dataUsingEncoding(NSUTF8StringEncoding)!
+        
+        do {
+            try session.sendData(data, toPeers: [peer.peerId], withMode: .Reliable)
+            print(">> Message sent!")
+        } catch {
+            print(">> Message failed to sent!")
+        }
+    }
+    
 }
 
 // MARK: - MCNearbyServiceAdvertiserDelegate
@@ -80,12 +112,18 @@ class SZDiscoveryManager: NSObject {
 extension SZDiscoveryManager: MCNearbyServiceAdvertiserDelegate {
     
     @objc func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
-        print("advertiser:didNotStartAdvertisingPeer: \(error)")
+        print(">> \(__FUNCTION__) \(error)")
     }
     
     @objc func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID,
-        withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void) {
-        print("advertiser:didReceiveInvitationFromPeer: \(peerID)")
+        withContext context: NSData?, invitationHandler: (Bool, MCSession) -> Void)
+    {
+        print(">> \(__FUNCTION__) \(peerID)")
+        
+        if let peer = peerForPeerID(peerID) {
+            self.invitationHandler = invitationHandler
+            advertiserDelegate?.didReceivedInvitationFromPeer(peer)
+        }
     }
     
 }
@@ -95,39 +133,37 @@ extension SZDiscoveryManager: MCNearbyServiceAdvertiserDelegate {
 extension SZDiscoveryManager: MCNearbyServiceBrowserDelegate {
     
     func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError) {
-        print("browser:didNotStartBrowsingForPeers: \(error)")
+        print(">> \(__FUNCTION__) \(error)")
     }
     
     func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        print("browser:foundPeer: \(peerID) info: \(info)")
+        print(">> \(__FUNCTION__) \(peerID)")
         
         // Check first if the peerID is already discovered
-        for peer in peers {
-            if (peer.peerId == peerID) {
-                return // peerID is already discovered
-            }
+        if (peerForPeerID(peerID) != nil) {
+            return
         }
         
         // Add to discovered peers
         peers.append(SZPeer(peerID: peerID, discoveryInfo: info))
         
         // Inform delegate
-        delegate?.didFoundPeer()
+        browserDelegate?.didFoundPeer()
     }
     
     func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-        print("browser:lostPeer: \(peerID)")
+        print(">> \(__FUNCTION__) \(peerID)")
         
         // Remove peer from discovered peers
         for (index, peer) in peers.enumerate() {
-            if (peer.peerId == peerID) {
+            if (peer.peerId.isEqual(peerID)) {
                 peers.removeAtIndex(index)
                 break
             }
         }
         
         // Inform delegate
-        delegate?.didLostPeer()
+        browserDelegate?.didLostPeer()
     }
     
 }
@@ -137,31 +173,65 @@ extension SZDiscoveryManager: MCNearbyServiceBrowserDelegate {
 extension SZDiscoveryManager: MCSessionDelegate {
     
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
-        
+        print(">> \(__FUNCTION__) \(peerID) \(state)")
+        switch state{
+        case .Connected:
+            print(">> Connected to session!")
+            if let peer = peerForPeerID(peerID) {
+                peer.connected = true
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.sessionDelegate?.didConnectWithPeer(peer)
+                })
+            }
+            
+        case .Connecting:
+            print(">> Connecting to session...")
+            
+        default:
+            print(">> Did not connect to session!")
+            if let peer = peerForPeerID(peerID) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.sessionDelegate?.didNotConnectWithPeer(peer)
+                })
+            }
+        }
     }
     
     func session(session: MCSession, didReceiveCertificate certificate: [AnyObject]?, fromPeer
-        peerID: MCPeerID, certificateHandler: (Bool) -> Void) {
-        
+        peerID: MCPeerID, certificateHandler: (Bool) -> Void)
+    {
+        print(">> \(__FUNCTION__) \(peerID)")
+        certificateHandler(true)
     }
     
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
+        print(">> \(__FUNCTION__) \(peerID)")
         
+        guard let peer = peerForPeerID(peerID) else { return }
+        guard let message = String(data: data, encoding: NSUTF8StringEncoding) else { return }
+        print("Message: \(message)")
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            sessionDelegate?.didReceivedMessage(message, fromPeer: peer)
+        })
     }
     
     func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String,
-        fromPeer peerID: MCPeerID) {
-        
+        fromPeer peerID: MCPeerID)
+    {
+        print(">> \(__FUNCTION__) \(peerID)")
     }
     
     func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer
-        peerID: MCPeerID, withProgress progress: NSProgress) {
-        
+        peerID: MCPeerID, withProgress progress: NSProgress)
+    {
+        print(">> \(__FUNCTION__) \(peerID)")
     }
     
     func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer
-        peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
-        
+        peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?)
+    {
+        print(">> \(__FUNCTION__) \(peerID)")
     }
     
 }

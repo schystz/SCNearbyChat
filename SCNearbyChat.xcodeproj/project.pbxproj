@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0350E71A1BC928AE00E366AE /* SZConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0350E7191BC928AE00E366AE /* SZConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		0354E7231BC7358A00666346 /* SZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0354E7221BC7358A00666346 /* SZTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		0373E3211BC61E2300774E3D /* SZEditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3201BC61E2300774E3D /* SZEditProfileController.swift */; settings = {ASSET_TAGS = (); }; };
 		0373E3231BC6323900774E3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0373E3221BC6323900774E3D /* Podfile */; settings = {ASSET_TAGS = (); }; };
 		0373E3261BC6359800774E3D /* SZHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3251BC6359800774E3D /* SZHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		0373E3281BC6431700774E3D /* SZChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0373E3271BC6431700774E3D /* SZChatController.swift */; settings = {ASSET_TAGS = (); }; };
+		03CAA9531BCA2B8300BF58CC /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03CAA94E1BCA2B8300BF58CC /* Roboto-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		03CAA9541BCA2B8300BF58CC /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03CAA94F1BCA2B8300BF58CC /* Roboto-Light.ttf */; settings = {ASSET_TAGS = (); }; };
+		03CAA9551BCA2B8300BF58CC /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03CAA9501BCA2B8300BF58CC /* Roboto-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
+		03CAA9561BCA2B8300BF58CC /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03CAA9511BCA2B8300BF58CC /* Roboto-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		03CAA9571BCA2B8300BF58CC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03CAA9521BCA2B8300BF58CC /* Roboto-Thin.ttf */; settings = {ASSET_TAGS = (); }; };
 		03F5FA561BC4B4F700633B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F5FA551BC4B4F700633B7F /* AppDelegate.swift */; };
 		03F5FA5D1BC4B4F700633B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F5FA5B1BC4B4F700633B7F /* Main.storyboard */; };
 		03F5FA5F1BC4B4F700633B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */; };
@@ -25,11 +32,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0350E7191BC928AE00E366AE /* SZConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZConstants.swift; sourceTree = "<group>"; };
+		0354E7221BC7358A00666346 /* SZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZTabBarController.swift; sourceTree = "<group>"; };
 		0373E3201BC61E2300774E3D /* SZEditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZEditProfileController.swift; sourceTree = "<group>"; };
 		0373E3221BC6323900774E3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		0373E3241BC6325300774E3D /* SZNearbyChat-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SZNearbyChat-BridgingHeader.h"; sourceTree = "<group>"; };
 		0373E3251BC6359800774E3D /* SZHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZHelper.swift; sourceTree = "<group>"; };
 		0373E3271BC6431700774E3D /* SZChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZChatController.swift; sourceTree = "<group>"; };
+		03CAA94E1BCA2B8300BF58CC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		03CAA94F1BCA2B8300BF58CC /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		03CAA9501BCA2B8300BF58CC /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		03CAA9511BCA2B8300BF58CC /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		03CAA9521BCA2B8300BF58CC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		03F5FA521BC4B4F700633B7F /* SCNearbyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCNearbyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F5FA551BC4B4F700633B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F5FA5C1BC4B4F700633B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03CAA94D1BCA2B8300BF58CC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				03CAA94E1BCA2B8300BF58CC /* Roboto-Bold.ttf */,
+				03CAA94F1BCA2B8300BF58CC /* Roboto-Light.ttf */,
+				03CAA9501BCA2B8300BF58CC /* Roboto-Medium.ttf */,
+				03CAA9511BCA2B8300BF58CC /* Roboto-Regular.ttf */,
+				03CAA9521BCA2B8300BF58CC /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		03F5FA491BC4B4F600633B7F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +109,7 @@
 			children = (
 				03F5FA551BC4B4F700633B7F /* AppDelegate.swift */,
 				0373E3241BC6325300774E3D /* SZNearbyChat-BridgingHeader.h */,
+				0350E7191BC928AE00E366AE /* SZConstants.swift */,
 				03F5FA6A1BC4B6B300633B7F /* Resources */,
 				03F5FA691BC4B6AC00633B7F /* Classes */,
 				03FAEAEC1BC5E9F800154C53 /* Views */,
@@ -105,6 +132,7 @@
 		03F5FA6A1BC4B6B300633B7F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				03CAA94D1BCA2B8300BF58CC /* Fonts */,
 				03F5FA601BC4B4F700633B7F /* LaunchScreen.storyboard */,
 				03F5FA5B1BC4B4F700633B7F /* Main.storyboard */,
 				03F5FA5E1BC4B4F700633B7F /* Assets.xcassets */,
@@ -116,6 +144,7 @@
 		03F5FA6B1BC4B6B800633B7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0354E7221BC7358A00666346 /* SZTabBarController.swift */,
 				03F5FA6C1BC4D2E200633B7F /* SZDiscoverController.swift */,
 				0373E3271BC6431700774E3D /* SZChatController.swift */,
 				03F5FA6E1BC4D2F700633B7F /* SZProfileController.swift */,
@@ -211,8 +240,13 @@
 			files = (
 				03F5FA621BC4B4F700633B7F /* LaunchScreen.storyboard in Resources */,
 				03F5FA5F1BC4B4F700633B7F /* Assets.xcassets in Resources */,
+				03CAA9561BCA2B8300BF58CC /* Roboto-Regular.ttf in Resources */,
+				03CAA9541BCA2B8300BF58CC /* Roboto-Light.ttf in Resources */,
+				03CAA9551BCA2B8300BF58CC /* Roboto-Medium.ttf in Resources */,
+				03CAA9531BCA2B8300BF58CC /* Roboto-Bold.ttf in Resources */,
 				0373E3231BC6323900774E3D /* Podfile in Resources */,
 				03F5FA5D1BC4B4F700633B7F /* Main.storyboard in Resources */,
+				03CAA9571BCA2B8300BF58CC /* Roboto-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +296,12 @@
 				03F5FA6F1BC4D2F700633B7F /* SZProfileController.swift in Sources */,
 				03F5FA731BC4D98B00633B7F /* SZUser.swift in Sources */,
 				0373E3261BC6359800774E3D /* SZHelper.swift in Sources */,
+				0350E71A1BC928AE00E366AE /* SZConstants.swift in Sources */,
 				03FAEAEB1BC5E9ED00154C53 /* SZPeerCell.swift in Sources */,
 				03F5FA561BC4B4F700633B7F /* AppDelegate.swift in Sources */,
 				03F5FA6D1BC4D2E200633B7F /* SZDiscoverController.swift in Sources */,
 				03F5FA711BC4D82300633B7F /* SZDiscoveryManager.swift in Sources */,
+				0354E7231BC7358A00666346 /* SZTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

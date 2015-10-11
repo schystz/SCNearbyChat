@@ -8,7 +8,7 @@
 
 import MultipeerConnectivity
 
-class SZPeer {
+class SZPeer: NSObject {
     
     // MARK: - Properties
     
@@ -17,6 +17,8 @@ class SZPeer {
     var name: String!
     var bio: String = ""
     var gender: Gender = .Unspecified
+    var connected = false
+    var chatMessages = [JSQMessage]()
     
     // MARK: - Private Methods
     
@@ -24,6 +26,9 @@ class SZPeer {
         peerId = peerID
         name = peerID.displayName
         initial = SZHelper.extractInitialsForName(name)
+        
+        super.init()
+        
         extractBioAndGender(discoveryInfo)
     }
     

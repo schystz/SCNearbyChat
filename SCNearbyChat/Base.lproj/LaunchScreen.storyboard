@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="tlH-o7-J8s">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Nearby Users-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
@@ -16,13 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-39-cb0">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Discover" image="tab_icon_search" selectedImage="tab_icon_search_filled" id="9Xw-oh-OgD"/>
+                                    <tabBarItem title="Me" image="tab_icon_profile" selectedImage="tab_icon_profile_filled" id="i2I-On-lCu"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MQO-39-cb0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4rn-GC-bLP"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MQO-39-cb0" secondAttribute="bottom" id="Bum-Y6-NMC"/>
+                            <constraint firstAttribute="trailing" secondItem="MQO-39-cb0" secondAttribute="trailing" id="bW0-Lr-W7h"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Nearby Users" id="efH-ri-9En"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R4n-0B-NU3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlH-o7-J8s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tTa-2r-h6J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="01J-lp-oVM" kind="relationship" relationship="rootViewController" id="sx1-mm-RYF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zV-E4-pi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_icon_profile" width="30" height="30"/>
+        <image name="tab_icon_profile_filled" width="30" height="30"/>
+        <image name="tab_icon_search" width="30" height="30"/>
+        <image name="tab_icon_search_filled" width="30" height="30"/>
+    </resources>
 </document>

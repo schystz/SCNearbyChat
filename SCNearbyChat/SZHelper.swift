@@ -27,4 +27,15 @@ class SZHelper {
         return initial.uppercaseString
     }
     
+    static func colorForGender(gender: Gender) -> UIColor {
+        switch (SZUser.sharedInstance.gender) {
+        case .Male:
+            return AvatarMaleColor
+        case .Female:
+            return AvatarFemaleColor
+        case .Unspecified:
+            return AvatarUnspecifiedColor
+        }
+    }
+    
 }

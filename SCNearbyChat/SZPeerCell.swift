@@ -13,12 +13,21 @@ class SZPeerCell: UITableViewCell {
     @IBOutlet weak var initial: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var bio: UILabel!
+    @IBOutlet weak var connectedIcon: UIImageView!
     
-    var peer: SZPeer? {
+    var peer: SZPeer! {
         didSet {
-            initial.text = peer?.initial
-            name.text = peer?.name
-            bio.text = peer?.bio
+            initial.text = peer.initial
+            name.text = peer.name
+            bio.text = peer.bio
+            
+            if (peer.connected) {
+                connectedIcon.alpha = 1
+            } else {
+                connectedIcon.alpha = 0
+            }
+            
+            initial.backgroundColor = SZHelper.colorForGender(peer.gender)
         }
     }
     
@@ -27,9 +36,16 @@ class SZPeerCell: UITableViewCell {
         
         // Create a round background effect for initial label
         initial.textColor = UIColor.whiteColor()
-        initial.backgroundColor = UIColor.darkGrayColor()
         initial.layer.cornerRadius = 20
         initial.clipsToBounds = true
+        
+        // Connected icon tinted
+        connectedIcon.image = UIImage(named: "icon_link")?.imageWithRenderingMode(.AlwaysTemplate)
+        
+        // Fonts
+        initial.font = UIFont(name: "Roboto-Light", size: 24)
+        name.font = UIFont(name: "Roboto", size: 17)
+        bio.font = UIFont(name: "Roboto", size: 12)
     }
 
 }

@@ -25,6 +25,9 @@ class SZEditProfileController: UITableViewController {
         nameField.text = user.username
         genderField.selectedSegmentIndex = user.gender.rawValue
         bioField.text = user.bio
+        
+        nameField.delegate = self
+        bioField.delegate = self
     }
     
     // MARK: - Actions
@@ -40,6 +43,24 @@ class SZEditProfileController: UITableViewController {
         
         SVProgressHUD.showSuccessWithStatus("Profile updated!")
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SZEditProfileController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        if (textField.isEqual(nameField)) {
+            bioField.becomeFirstResponder()
+        } else {
+            save(textField)
+        }
+        
+        return true
     }
     
 }

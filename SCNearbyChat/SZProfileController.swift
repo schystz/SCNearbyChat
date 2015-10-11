@@ -24,8 +24,6 @@ class SZProfileController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        visibilitySwitch.on = SZUser.sharedInstance.visibleToOthers
-        
         populateLabels()
         customizeUI()
         
@@ -41,19 +39,27 @@ class SZProfileController: UITableViewController {
         genderLabel.text = user.gender.description
         bioLabel.text = user.bio
         initialLabel.text = user.initials()
+        visibilitySwitch.on = user.visibleToOthers
+        
+        initialLabel.backgroundColor = SZHelper.colorForGender(user.gender)
     }
     
     private func customizeUI() {
         // Create a round background effect for initial label
         initialLabel.textColor = UIColor.whiteColor()
-        initialLabel.backgroundColor = UIColor.darkGrayColor()
         initialLabel.layer.cornerRadius = 35
         initialLabel.clipsToBounds = true
         
         // Customize button
-        editButton.backgroundColor = (UIApplication.sharedApplication().delegate as! AppDelegate).window!.tintColor
+        editButton.backgroundColor = GlobalTintColor
         editButton.tintColor = UIColor.whiteColor()
         editButton.layer.cornerRadius = 13
+        
+        // Fonts
+        initialLabel.font = UIFont(name: "Roboto-Light", size: 36)
+        nameLabel.font = UIFont(name: "Roboto-Light", size: 20)
+        bioLabel.font = UIFont(name: "Roboto-Light", size: 17)
+        editButton.titleLabel?.font = UIFont(name: "Roboto", size: 12)
     }
     
     // MARK: - Public Methods
